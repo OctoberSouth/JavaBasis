@@ -9,8 +9,8 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<!-- 公共模块 -->
-		<!-- <module>xd-live-common</module> -->
+		<!-- 用户 -->
+		<module>springboot-user</module>
 	</modules>
 
 	<name>springboot</name>
@@ -24,6 +24,7 @@
 		<skipTests>true</skipTests>
 	</properties>
 
+	<!-- 指定Spring Boot的版本 2.2.1.RELEASE -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -31,7 +32,6 @@
 	</parent>
 
 	<dependencies>
-		
 	</dependencies>
 
 </project>
