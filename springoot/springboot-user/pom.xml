@@ -41,6 +41,17 @@
 			<version>1.18.10</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- swagger2文档 -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
+		</dependency>
 	</dependencies>
 
 	<!-- 这个插件，可以将应用打包成一个可执行的jar包 -->
