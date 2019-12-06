@@ -6,9 +6,9 @@ server:
 spring:
   #数据库配置
   datasource:
-    url: jdbc:mysql://127.0.0.1/actual-combat?useUnicode=true&useSSL=false
-    username: root
-    password: MyNewPass4!
+    url: jdbc:mysql://127.0.0.1:3306/actual-combat?useUnicode=true&useSSL=false
+    username:
+    password:
     # 配置数据源
     driver-class-name: com.mysql.cj.jdbc.Driver
 

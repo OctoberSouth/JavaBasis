@@ -1,5 +1,6 @@
 package com.lp;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @describe
  */
 @SpringBootApplication
+@MapperScan("com.lp")
 public class AppleApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
