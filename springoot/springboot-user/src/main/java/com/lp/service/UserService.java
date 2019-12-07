@@ -18,16 +18,21 @@ import java.util.List;
 @Service
 public class UserService {
 
-    @Autowired
     private UserMapper userMapper;
 
-    public List<User>  listUser() {
-        List<User> userList = this.userMapper.selectList(null);
-        return  userList;
+    @Autowired
+    public void setUserMapper(UserMapper userMapper) {
+        this.userMapper = userMapper;
     }
 
 
-    public void  saveUser(String userName,String password) {
+    public List<User> listUser() {
+        List<User> userList = this.userMapper.selectList(null);
+        return userList;
+    }
+
+
+    public void saveUser(String userName, String password) {
         User user = new User();
         user.setUserName(userName);
         user.setPassword(password);
