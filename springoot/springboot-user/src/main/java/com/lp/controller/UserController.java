@@ -117,4 +117,16 @@ public class UserController {
         }
         return json;
     }
+
+    @GetMapping(value = "demo")
+    public ResultJson demo() {
+        ResultJson json = new ResultJson();
+        try {
+            this.userService.demo();
+        } catch (Exception e) {
+            json.setMessage(e.getMessage());
+            json.setStatusCode(ResultJson.FAILURE);
+        }
+        return json;
+    }
 }

@@ -1,11 +1,13 @@
 package com.lp.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lp.dao.UserMapper;
 import com.lp.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -39,7 +41,7 @@ public class UserService {
         this.userMapper.insert(user);
     }
 
-    public IPage<User> selectUserPage() {
+    public Page<User> selectUserPage() {
         Page<User> page = new Page<>(3, 2);
         return userMapper.selectUserList(page);
     }
@@ -50,5 +52,41 @@ public class UserService {
 
     public List<User> selectUserListById() {
         return userMapper.selectUserList("93ef6a281df924a9d3bff3211b0567af");
+    }
+
+
+    /**
+     * @author 刘攀
+     * @date 2019/12/17 14:24
+     * @return void
+     * @version 1.0
+     * @describe mybatis plus常用单表操作
+     */
+    @Transactional(rollbackFor = Exception.class)
+    public void demo(){
+        //添加
+        User user = new User();
+        user.setUserName("雨");
+        user.setPassword("password");
+        this.userMapper.insert(user);
+        //根据条件查询列表
+        QueryWrapper<User> wrapper = new QueryWrapper();
+        wrapper.like("user_name", "雨");
+        List<User>  listUser = this.userMapper.selectList(wrapper);
+        //根据条件删除，这里的删除是逻辑删除，指把deletion字段改为1
+        QueryWrapper<User> deleteWrapper = new QueryWrapper();
+        deleteWrapper.eq("id","93ef6a281df924a9d3bff3211b0567af");
+        this.userMapper.delete(deleteWrapper);
+        //根据id修改
+        User updateUser = new User();
+        updateUser.setId("93ef6a281df924a9d3bff3211b0567af");
+        updateUser.setUserName("user");
+        updateUser.setPassword("password");
+        this.userMapper.updateById(updateUser);
+        //分页查询
+        Page<User> page = new Page<>(1, 2);
+        QueryWrapper<User> pageWrapper = new QueryWrapper();
+        pageWrapper.like("user_name", "雨");
+        IPage<User> userIPage = this.userMapper.selectPage(page,pageWrapper);
     }
 }

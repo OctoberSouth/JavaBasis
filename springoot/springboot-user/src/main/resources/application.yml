@@ -8,16 +8,15 @@ server:
 spring:
   #数据库配置
   datasource:
-    url: jdbc:mysql://192.168.146.129:3306/actual-combat?useUnicode=true&useSSL=false
+    url: jdbc:mysql://192.168.3.140:3306/actual-combat?useUnicode=true&useSSL=false
     username: root
-    password: MyNewPass4!
+    password: Xd123456!
     # 配置数据源
     driver-class-name: com.mysql.cj.jdbc.Driver
   # Redis数据库配置
   redis:
     # Redis数据库索引（默认为0）
     database: 0
-    host: 192.168.146.129
-    #密码
-    #password:
+    host: 192.168.3.140
+    password: Xd123456!
     port: 6379
