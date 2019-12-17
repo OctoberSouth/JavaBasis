@@ -9,7 +9,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<!-- 用户 -->
+		<!-- 用户子级项目 -->
 		<module>springboot-user</module>
 	</modules>
 
