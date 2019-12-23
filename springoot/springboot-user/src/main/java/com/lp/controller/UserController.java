@@ -3,11 +3,12 @@ package com.lp.controller;
 import com.lp.common.ResultJson;
 import com.lp.common.config.RedisUtil;
 import com.lp.service.UserService;
+import com.lp.vo.UserVo;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author 刘攀
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/user")
+@Api(tags = {"用户相关"})
 public class UserController {
 
     private UserService userService;
@@ -82,11 +84,13 @@ public class UserController {
         return json;
     }
 
-    @GetMapping(value = "/list/id")
-    public ResultJson selectUserListById() {
+    @GetMapping(value = "/{id}")
+    @ApiOperation(value = "保存所有的评论", response = UserVo.class)
+    public ResultJson selectUserListById(
+            @ApiParam(value = "评论id", required = true) @PathVariable String id) {
         ResultJson json = new ResultJson();
         try {
-            json.setData(this.userService.selectUserListById());
+            json.setData(this.userService.selectUserListById(id));
         } catch (Exception e) {
             json.setMessage(e.getMessage());
             json.setStatusCode(ResultJson.FAILURE);

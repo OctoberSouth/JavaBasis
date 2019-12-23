@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lp.dao.UserMapper;
 import com.lp.entity.User;
+import com.lp.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -50,20 +51,26 @@ public class UserService {
         return userMapper.selectUserList();
     }
 
-    public List<User> selectUserListById() {
-        return userMapper.selectUserList("93ef6a281df924a9d3bff3211b0567af");
+    /**
+     * 根据ID查询
+     *
+     * @param id
+     * @return
+     */
+    public UserVo selectUserListById(String id) {
+        return userMapper.selectUserById(id);
     }
 
 
     /**
+     * @return void
      * @author 刘攀
      * @date 2019/12/17 14:24
-     * @return void
      * @version 1.0
      * @describe mybatis plus常用单表操作
      */
     @Transactional(rollbackFor = Exception.class)
-    public void demo(){
+    public void demo() {
         //添加
         User user = new User();
         user.setUserName("雨");
@@ -72,10 +79,10 @@ public class UserService {
         //根据条件查询列表
         QueryWrapper<User> wrapper = new QueryWrapper();
         wrapper.like("user_name", "雨");
-        List<User>  listUser = this.userMapper.selectList(wrapper);
+        List<User> listUser = this.userMapper.selectList(wrapper);
         //根据条件删除，这里的删除是逻辑删除，指把deletion字段改为1
         QueryWrapper<User> deleteWrapper = new QueryWrapper();
-        deleteWrapper.eq("id","93ef6a281df924a9d3bff3211b0567af");
+        deleteWrapper.eq("id", "93ef6a281df924a9d3bff3211b0567af");
         this.userMapper.delete(deleteWrapper);
         //根据id修改
         User updateUser = new User();
@@ -87,6 +94,6 @@ public class UserService {
         Page<User> page = new Page<>(1, 2);
         QueryWrapper<User> pageWrapper = new QueryWrapper();
         pageWrapper.like("user_name", "雨");
-        IPage<User> userIPage = this.userMapper.selectPage(page,pageWrapper);
+        IPage<User> userIPage = this.userMapper.selectPage(page, pageWrapper);
     }
 }

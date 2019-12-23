@@ -5,9 +5,10 @@
 <mapper namespace="com.lp.dao.UserMapper">
 
     <select id="selectUserList" resultType="com.lp.entity.User">
-        SELECT * from  user
+        SELECT * from user
         <if test="size != null and size != ''">
-            where  1 = 1
+            where 1 = 1
         </if>
     </select>
+
 </mapper>
