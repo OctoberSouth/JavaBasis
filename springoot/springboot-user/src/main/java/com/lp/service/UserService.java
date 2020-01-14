@@ -5,7 +5,9 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lp.dao.UserMapper;
 import com.lp.entity.User;
+import com.lp.rabbitmq.RabbitMqConstant;
 import com.lp.vo.UserVo;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,9 +25,16 @@ public class UserService {
 
     private UserMapper userMapper;
 
+    private RabbitTemplate rabbitTemplate;
+
     @Autowired
     public void setUserMapper(UserMapper userMapper) {
         this.userMapper = userMapper;
+    }
+
+    @Autowired
+    public void setRabbitTemplate(RabbitTemplate rabbitTemplate) {
+        this.rabbitTemplate = rabbitTemplate;
     }
 
 
@@ -95,5 +104,9 @@ public class UserService {
         QueryWrapper<User> pageWrapper = new QueryWrapper();
         pageWrapper.like("user_name", "雨");
         IPage<User> userIPage = this.userMapper.selectPage(page, pageWrapper);
+    }
+
+    public void testMq(String value) {
+        this.rabbitTemplate.convertAndSend(RabbitMqConstant.TEST + RabbitMqConstant.QUEUE, value);
     }
 }

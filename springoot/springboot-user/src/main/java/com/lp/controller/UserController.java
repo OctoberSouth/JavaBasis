@@ -133,4 +133,16 @@ public class UserController {
         }
         return json;
     }
+
+    @PostMapping(value = "/test/mq")
+    public ResultJson testMq(String value) {
+        ResultJson json = new ResultJson();
+        try {
+            this.userService.testMq(value);
+        } catch (Exception e) {
+            json.setMessage(e.getMessage());
+            json.setStatusCode(ResultJson.FAILURE);
+        }
+        return json;
+    }
 }
