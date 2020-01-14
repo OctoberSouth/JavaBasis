@@ -15,7 +15,7 @@ public class RabbitMqReceiver {
 
     @RabbitListener(queues = RabbitMqConstant.TEST + RabbitMqConstant.QUEUE)
     @RabbitHandler
-    public void donorGiftLive(String value) {
+    public void testMq(String value) {
         try {
             System.out.println(value + "==================");
         } catch (Exception e) {
