@@ -9,7 +9,8 @@
 	<packaging>pom</packaging>
 
 	<modules>
-
+		<!-- 服务者模块 -->
+		<module>spring-cloud-eureka</module>
 	</modules>
 
 	<name>xd-live-cloud</name>
@@ -29,10 +30,6 @@
 	    <artifactId>spring-boot-starter-parent</artifactId>
 	    <version>2.1.9.RELEASE</version>
 	</parent>
-	
-	<dependencies>
-
-	</dependencies>
 
 	<dependencyManagement>
 		<dependencies>
