@@ -11,6 +11,8 @@
 	<modules>
 		<!-- 服务者模块 -->
 		<module>spring-cloud-eureka</module>
+		<!--服务生产者-->
+		<module>spring-cloud-eureka-client</module>
 	</modules>
 
 	<name>xd-live-cloud</name>
