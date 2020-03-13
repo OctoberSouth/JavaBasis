@@ -4,7 +4,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * 生产者服务
@@ -16,16 +15,14 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @EnableEurekaClient
 @SpringBootApplication
-//表明是feign
-@EnableFeignClients
-public class AppleApplicationFeign implements CommandLineRunner {
+public class AppleApplicationRibbon implements CommandLineRunner {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AppleApplicationFeign.class, args);
+		SpringApplication.run(AppleApplicationRibbon.class, args);
 	}
 
 	@Override
 	public void run(String... strings) {
-		System.out.println("服务消费者Feign启动完毕.");
+		System.out.println("服务消费者Ribbon启动完毕.");
 	}
 }

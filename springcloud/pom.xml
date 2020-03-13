@@ -15,6 +15,8 @@
         <module>spring-cloud-eureka-client</module>
         <!-- 服务消费着feign -->
         <module>spring-cloud-eureka-feign</module>
+        <!-- 服务消费着ribbon -->
+        <module>spring-cloud-eureka-ribbon</module>
     </modules>
 
     <name>xd-live-cloud</name>
