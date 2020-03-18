@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 public class TestController {
 
     @PostMapping
-    public ResultJson saveTest( @RequestParam String txt) {
+    public ResultJson saveTest(@RequestParam String txt) {
         System.out.println(txt);
         return new ResultJson(txt);
     }

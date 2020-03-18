@@ -1,6 +1,5 @@
 package com.lp.controller;
 
-import com.lp.common.ResultJson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +19,7 @@ public class TestController {
 
     @PostMapping
     public String test(@RequestParam String txt) {
-        return restTemplate.postForEntity("http://lp-service/service/test?txt={0}", null,  String.class,txt).getBody();
+        return restTemplate.postForEntity("http://lp-service/service/test?txt={0}", null, String.class, txt).getBody();
     }
 
 }
