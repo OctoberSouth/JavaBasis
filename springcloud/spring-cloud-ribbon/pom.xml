@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>spring-cloud-eureka-ribbon</artifactId>
+    <artifactId>spring-cloud-ribbon</artifactId>
     <packaging>jar</packaging>
-    <name>spring-cloud-eureka-ribbon</name>
+    <name>spring-cloud-ribbon</name>
     <description>服务消费者模块ribbon</description>
 
     <parent>

@@ -12,11 +12,13 @@
         <!-- 服务者模块 -->
         <module>spring-cloud-eureka</module>
         <!--服务生产者-->
-        <module>spring-cloud-eureka-client</module>
+        <module>spring-cloud-client</module>
         <!-- 服务消费着feign -->
-        <module>spring-cloud-eureka-feign</module>
+        <module>spring-cloud-feign</module>
         <!-- 服务消费着ribbon -->
-        <module>spring-cloud-eureka-ribbon</module>
+        <module>spring-cloud-ribbon</module>
+        <!-- 服务网关 -->
+        <module>spring-cloud-zuul</module>
     </modules>
 
     <name>xd-live-cloud</name>

@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>spring-cloud-eureka-feign</artifactId>
+    <artifactId>spring-cloud-zuul</artifactId>
     <packaging>jar</packaging>
-    <name>spring-cloud-eureka-feign</name>
-    <description>服务消费者模块feign</description>
+    <name>spring-cloud-zuul</name>
+    <description>服务生产者模块</description>
 
     <parent>
         <artifactId>spring-cloud</artifactId>
@@ -21,10 +21,9 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!-- websocket 包含spring-boot-starter-web和spring-boot-starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-websocket</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
             <!-- 移除掉默认支持的 Tomcat -->
             <exclusions>
                 <exclusion>
@@ -37,11 +36,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
-        </dependency>
-        <!-- feign -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
     </dependencies>
 
