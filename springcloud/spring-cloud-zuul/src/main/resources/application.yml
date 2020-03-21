@@ -1,12 +1,12 @@
 server:
-  port: 8861
+  port: 8080
   servlet:
-    context-path: /service
+    context-path: /zuul
 
 spring:
   application:
     # 指定注册到Eureka Server上的应用名称
-    name: lp-service
+    name: lp-zuul
 
 eureka:
   client:
@@ -16,3 +16,17 @@ eureka:
   instance:
     # 将自己的IP注册到Eureka Server。若不配置或设置为false，表示注册微服务所在操作系统的hostname到Eureka Server
     prefer-ip-address: true
+
+# ========添加配置=======
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #注意这里*要加引号，暴露全部，也可以只暴露相应endpoint
+  endpoint:
+    routes:
+      enabled: true # 默认为true，可以省略
+
+zuul:
+  routes:
+    lp-feign: /feign/**
