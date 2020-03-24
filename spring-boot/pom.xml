@@ -10,10 +10,10 @@
 
 	<modules>
 		<!-- 用户子级项目 -->
-		<module>springboot-user</module>
+		<module>spring-boot-user</module>
 	</modules>
 
-	<name>springboot</name>
+	<name>spring-boot</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

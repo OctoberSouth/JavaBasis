@@ -5,9 +5,9 @@
 
     <modelVersion>4.0.0</modelVersion>
     <!-- 用户相关 -->
-    <artifactId>springboot-user</artifactId>
+    <artifactId>spring-boot-user</artifactId>
     <packaging>jar</packaging>
-    <name>springboot-user</name>
+    <name>spring-boot-user</name>
     <description>用户模块</description>
 
     <parent>
