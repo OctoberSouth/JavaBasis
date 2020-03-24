@@ -21,7 +21,7 @@
         <module>spring-cloud-zuul</module>
     </modules>
 
-    <name>xd-live-cloud</name>
+    <name>spring-cloud</name>
     <url>http://maven.apache.org</url>
 
     <properties>
