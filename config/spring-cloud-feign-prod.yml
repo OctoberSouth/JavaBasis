@@ -1,12 +1,3 @@
-eureka:
-  client:
-    service-url:
-      # 注册地址
-      defaultZone: http://localhost:8761/eureka/eureka/
-  instance:
-    # 将自己的IP注册到Eureka Server。若不配置或设置为false，表示注册微服务所在操作系统的hostname到Eureka Server
-    prefer-ip-address: true
-
 #开启hystir
 feign:
   hystrix:
