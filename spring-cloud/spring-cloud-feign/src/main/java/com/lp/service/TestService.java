@@ -15,6 +15,4 @@ public interface TestService {
     @PostMapping("test")
     ResultJson saveTest(@RequestParam String txt);
 
-    @PostMapping("testw")
-    ResultJson saveTestw(@RequestParam String txt);
 }

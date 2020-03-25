@@ -9,11 +9,10 @@ import org.springframework.stereotype.Service;
  * @Author 刘攀
  * @Date 2020/3/24 17:32
  * @Version 1.0
- * @Deacription TODO
+ * @Deacription 发生错误回调
  **/
 @Service
 public class TestServiceFailBack implements FallbackFactory<TestService> {
-
 
     /**
      * 统一返回失败参数
@@ -25,16 +24,10 @@ public class TestServiceFailBack implements FallbackFactory<TestService> {
         return new TestService() {
             @Override
             public ResultJson saveTest(String txt) {
+                //这里是打印错误日志
                 System.err.println(cause);
-                return resultJson;
-            }
-
-            @Override
-            public ResultJson saveTestw(String txt) {
                 return resultJson;
             }
         };
     }
-
-
 }
