@@ -19,6 +19,8 @@
         <module>spring-cloud-ribbon</module>
         <!-- 服务网关 -->
         <module>spring-cloud-zuul</module>
+        <!-- 服务配置server-->
+        <module>spring-cloud-config-server</module>
     </modules>
 
     <name>spring-cloud</name>
