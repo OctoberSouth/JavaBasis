@@ -1,5 +1,19 @@
+#开启hystir
+feign:
+  hystrix:
+    enabled: true
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000 #hystrix超时时间
 data:
-  env: localhost-online
+  env: config-eureka
   user:
-    username: fengzheng-online
-    password: password-online
+    username: eureka-client-user-master
+    password: 88888888
