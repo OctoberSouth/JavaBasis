@@ -12,3 +12,8 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 3000 #hystrix超时时间
+data:
+  env: config-eureka
+  user:
+    username: eureka-client-user-master
+    password: 88888888
