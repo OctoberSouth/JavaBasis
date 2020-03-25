@@ -1,0 +1,13 @@
+server:
+  port: 8861
+  servlet:
+    context-path: /service
+
+spring:
+  application:
+    # 指定注册到Eureka Server上的应用名称
+    name: lp-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848

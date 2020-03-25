@@ -9,7 +9,8 @@
     <packaging>pom</packaging>
 
     <modules>
-
+        <!--服务生产者-->
+        <module>spring-cloud-alibaba-client</module>
     </modules>
 
     <name>spring-cloud-alibaba</name>
@@ -21,6 +22,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
+        <spring-cloud-alibaba.version>0.9.0.RELEASE</spring-cloud-alibaba.version>
         <skipTests>true</skipTests>
     </properties>
 
@@ -49,6 +51,14 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
 </project>
