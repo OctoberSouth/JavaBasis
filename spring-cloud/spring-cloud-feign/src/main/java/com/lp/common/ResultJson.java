@@ -1,6 +1,7 @@
 package com.lp.common;
 
 import lombok.Data;
+import lombok.Getter;
 
 /**
  * 
@@ -12,29 +13,42 @@ import lombok.Data;
  */
 @Data
 public class ResultJson {
-	/**
-	 * 正确返回
-	 */
-	public static final Integer SUCCESS = 200;
-	/**
-	 * 参数不正确
-	 */
-	public static final Integer FAILURE = 412;
-	/**
-	 * 程序内部错误
-	 */
-	public static final Integer ERROR = 500;
-	/** 用户模块end**/
 
+	/**
+	 * @Author 刘攀
+	 * @Date 2020/3/25 18:17
+	 * @Version 1.0
+	 * @Description 返回statusCode 统一限定
+	 **/
+	public enum StatusCodeEnum{
+		SUCCESS(200,"正确返回"),
+		FAILURE(412,"参数不正确"),
+		ERROR(500,"程序内部错误");
+		/**
+		 * 标识码
+		 */
+		@Getter
+		private Integer code;
+
+		/**
+		 * 信息
+		 */
+		private String msg;
+
+		StatusCodeEnum(Integer code, String msg) {
+			this.code = code;
+			this.msg = msg;
+		}
+	}
 	/**
 	 * 结果
 	 */
-	private Integer statusCode = SUCCESS;
+	private Integer statusCode = StatusCodeEnum.SUCCESS.getCode();
 
 	/**
 	 * 消息
 	 */
-	private String message = "";
+	private String message;
 
 	/**
 	 * 数据
@@ -45,15 +59,15 @@ public class ResultJson {
 		super();
 	}
 
-	public ResultJson(Integer statusCode, String message) {
+	public ResultJson(StatusCodeEnum statusCodeEnum, String message) {
 		super();
-		this.statusCode = statusCode;
+		this.statusCode = statusCodeEnum.getCode();
 		this.message = message;
 	}
 
-	public ResultJson(Integer statusCode, String message, Object data) {
+	public ResultJson(StatusCodeEnum statusCodeEnum, String message, Object data) {
 		super();
-		this.statusCode = statusCode;
+		this.statusCode = statusCodeEnum.getCode();
 		this.message = message;
 		this.data = data;
 	}
@@ -61,5 +75,13 @@ public class ResultJson {
 	public ResultJson(Object data) {
 		super();
 		this.data = data;
+	}
+
+	public static ResultJson  success(Object data) {
+		return new ResultJson(data);
+	}
+
+	public static ResultJson  error(String message) {
+		return new ResultJson(StatusCodeEnum.ERROR,message);
 	}
 }

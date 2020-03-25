@@ -17,7 +17,7 @@ public class TestServiceFailBack implements FallbackFactory<TestService> {
     /**
      * 统一返回失败参数
      */
-    private static ResultJson resultJson = new ResultJson(ResultJson.ERROR, "服务调用失败");
+    private static ResultJson resultJson = ResultJson.error("服务调用失败");
 
     @Override
     public TestService create(Throwable cause) {
