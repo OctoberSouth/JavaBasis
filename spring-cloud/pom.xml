@@ -24,7 +24,7 @@
         <!-- 服务配置server-->
         <module>spring-cloud-config-server</module>
         <!-- 服务配置client-->
-        <module> spring-cloud-config-client</module>
+        <module>spring-cloud-config-client</module>
     </modules>
 
     <name>spring-cloud</name>
@@ -46,7 +46,7 @@
     </parent>
 
     <dependencies>
-		<!--lombok-->
+        <!--lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
