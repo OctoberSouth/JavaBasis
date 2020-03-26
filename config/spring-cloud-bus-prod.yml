@@ -1,5 +1,5 @@
 data:
-  env: spring-cloud-bus-prod-test
+  env: spring-cloud-bus-prod
   user:
     username: eureka-client-user-master
     password: 88888888
