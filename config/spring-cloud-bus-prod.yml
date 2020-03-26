@@ -3,3 +3,10 @@ data:
   user:
     username: eureka-client-user-master
     password: 88888888
+
+spring:
+  rabbitmq:
+    host: 192.168.88.128
+    port: 5672
+    username: admin
+    password: mypassword
