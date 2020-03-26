@@ -15,12 +15,16 @@
         <module>spring-cloud-client</module>
         <!-- 服务消费着feign -->
         <module>spring-cloud-feign</module>
+        <!-- 服务消费着feign整合hystrix -->
+        <module>spring-cloud-feign-hystrix</module>
         <!-- 服务消费着ribbon -->
         <module>spring-cloud-ribbon</module>
         <!-- 服务网关 -->
         <module>spring-cloud-zuul</module>
         <!-- 服务配置server-->
         <module>spring-cloud-config-server</module>
+        <!-- 服务配置client-->
+        <module> spring-cloud-config-client</module>
     </modules>
 
     <name>spring-cloud</name>

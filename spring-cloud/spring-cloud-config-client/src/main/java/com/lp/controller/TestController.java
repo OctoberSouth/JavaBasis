@@ -1,11 +1,9 @@
 package com.lp.controller;
 
 import com.lp.common.ResultJson;
-import com.lp.service.TestService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -15,11 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 public class TestController {
 
-    @Autowired
-    private TestService testService;
+    @Value("${data.env}")
+    private String defaultZone;
+
 
     @PostMapping
-    public ResultJson saveTest( @RequestParam String txt) {
-        return testService.saveTest(txt);
+    public ResultJson saveTest() {
+        System.out.println(defaultZone+"==================");
+        return ResultJson.success(defaultZone);
     }
 }

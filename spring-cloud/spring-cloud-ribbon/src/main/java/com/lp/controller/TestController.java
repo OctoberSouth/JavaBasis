@@ -19,7 +19,7 @@ public class TestController {
 
     @PostMapping
     public String test(@RequestParam String txt) {
-        return restTemplate.postForEntity("http://lp-service/service/test?txt={0}", null, String.class, txt).getBody();
+        return restTemplate.postForEntity("http://lp-service/test?txt={0}", null, String.class, txt).getBody();
     }
 
 }
