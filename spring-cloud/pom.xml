@@ -25,6 +25,8 @@
         <module>spring-cloud-config-server</module>
         <!-- 服务配置client-->
         <module>spring-cloud-config-client</module>
+        <!-- 消息总线BUS-->
+        <module>spring-cloud-bus</module>
     </modules>
 
     <name>spring-cloud</name>
