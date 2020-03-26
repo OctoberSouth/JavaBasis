@@ -1,0 +1,5 @@
+data:
+  env: spring-cloud-bus-dev
+  user:
+    username: eureka-client-user-master
+    password: 88888888
