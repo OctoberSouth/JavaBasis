@@ -27,6 +27,10 @@
         <module>spring-cloud-config-client</module>
         <!-- 消息总线BUS-->
         <module>spring-cloud-bus</module>
+        <!-- 消息中间组件发送者-->
+        <module>spring-cloud-stream-server</module>
+        <!-- 消息中间组件接受者-->
+        <module>spring-cloud-stream-client</module>
     </modules>
 
     <name>spring-cloud</name>
