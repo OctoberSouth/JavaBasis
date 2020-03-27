@@ -31,6 +31,8 @@
         <module>spring-cloud-stream-server</module>
         <!-- 消息中间组件接受者-->
         <module>spring-cloud-stream-client</module>
+        <!-- 服务网关gateway -->
+        <module>spring-cloud-gateway</module>
     </modules>
 
     <name>spring-cloud</name>
