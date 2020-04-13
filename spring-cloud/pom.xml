@@ -33,6 +33,8 @@
         <module>spring-cloud-stream-client</module>
         <!-- 服务网关gateway -->
         <module>spring-cloud-gateway</module>
+        <!-- 整合其他服务 -->
+        <module>spring-cloud-sidecar</module>
     </modules>
 
     <name>spring-cloud</name>
