@@ -7,8 +7,12 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
+ * 表明是feign
+ */
+@EnableFeignClients
+/**
  * FeignHystrix
- * 
+ *
  * @author 刘攀
  * @time 2019年11月8日下午2:47:53
  * @version 1.0
@@ -16,8 +20,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @EnableEurekaClient
 @SpringBootApplication
-//表明是feign
-@EnableFeignClients
 public class AppleApplicationFeignHystrix implements CommandLineRunner {
 
 	public static void main(String[] args) {

@@ -19,8 +19,25 @@ import java.util.List;
 @Repository
 public interface UserMapper extends BaseMapper<User> {
 
+    /**
+     * 分页
+     *
+     * @param page
+     * @return Page<User>
+     * @author 刘攀
+     * @date 2020/11/17 14:09
+     * @version 1.0
+     */
     Page<User> selectUserList(Page page);
 
+    /**
+     * 查询列表
+     *
+     * @return java.util.List<com.lp.entity.User>
+     * @author 刘攀
+     * @date 2020/11/17 14:09
+     * @version 1.0
+     */
     List<User> selectUserList();
 
     /**

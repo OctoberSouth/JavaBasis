@@ -20,10 +20,13 @@ public class ResultJson {
 	 * @Version 1.0
 	 * @Description 返回statusCode 统一限定
 	 **/
-	public enum StatusCodeEnum{
-		SUCCESS(200,"正确返回"),
-		FAILURE(412,"参数不正确"),
-		ERROR(500,"程序内部错误");
+	public enum StatusCodeEnum {
+		/**
+		 * 返回statusCode 统一限定
+		 */
+		SUCCESS(200, "正确返回"),
+		FAILURE(412, "参数不正确"),
+		ERROR(500, "程序内部错误");
 		/**
 		 * 标识码
 		 */

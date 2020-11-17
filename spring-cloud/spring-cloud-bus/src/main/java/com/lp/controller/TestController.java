@@ -4,14 +4,13 @@ import com.lp.common.ResultJson;
 import com.lp.entity.GitAutoRefreshConfig;
 import com.lp.entity.GitConfig;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 测试controller
+ * @author 刘攀
+ * @version 1.0
+ * @date 2020/11/17 14:09
  */
 @RestController
 public class TestController {

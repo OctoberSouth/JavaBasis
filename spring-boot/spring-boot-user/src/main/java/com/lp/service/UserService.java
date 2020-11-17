@@ -103,7 +103,7 @@ public class UserService {
         Page<User> page = new Page<>(1, 2);
         QueryWrapper<User> pageWrapper = new QueryWrapper();
         pageWrapper.like("user_name", "雨");
-        IPage<User> userIPage = this.userMapper.selectPage(page, pageWrapper);
+        IPage<User> userPage = this.userMapper.selectPage(page, pageWrapper);
     }
 
     public void testMq(String value) {

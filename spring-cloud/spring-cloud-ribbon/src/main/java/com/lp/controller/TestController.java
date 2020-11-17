@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * 测试controller
+ * @author 刘攀
+ * @version 1.0
+ * @date 2020/11/17 14:09
  */
 @RestController
 @RequestMapping("/test")
