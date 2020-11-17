@@ -5,7 +5,7 @@
 欢迎关注个人微信公众号：基础进阶 ，微信搜索 ：JavaBasis
 
 #### Software Architecture
-此项目用于学习spring系列
+此项目用于学习spring系列 
 
 #### Installation
 
