@@ -5,7 +5,7 @@ server:
 
 spring:
   application:
-    # 指定注册到Eureka Server上的应用名称
+    # 指定注册到 nacos Server上的应用名称
     name: lp-service
   cloud:
     nacos:
