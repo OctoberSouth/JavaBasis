@@ -6,8 +6,8 @@ server:
 spring:
   application:
     # 指定注册到 nacos Server上的应用名称
-    name: lp-service
+    name: service
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.146.128:8848
+        server-addr: 127.0.0.1:8848

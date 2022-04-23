@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    # 指定注册到 nacos Server上的应用名称
+    name: gateway-sentinel
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      # 路由（routes：路由，它由唯一标识（ID）、目标服务地址（uri）、一组断言（predicates）和一组过滤器组成（filters）。filters 不是必需参数。）
+      routes:
+        # 路由标识（id：标识，具有唯一性）   简单尝试
+        - id: service
+          # 目标服务地址（uri：地址，请求转发后的地址）
+          uri: lb://service
+          # 路由条件（predicates：断言，匹配 HTTP 请求内容）
+          predicates:
+            ## 转发地址格式为 uri/archive
+            - Path=/service/**
+#          filters:
+#            - StripPrefix=1
