@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 80
 
 spring:
   application:
@@ -20,5 +20,8 @@ spring:
           predicates:
             ## 转发地址格式为 uri/archive
             - Path=/service/**
-#          filters:
-#            - StripPrefix=1
+    #          filters:
+    #            - StripPrefix=1
+    sentinel:
+      transport:
+        dashboard: localhost:8080
