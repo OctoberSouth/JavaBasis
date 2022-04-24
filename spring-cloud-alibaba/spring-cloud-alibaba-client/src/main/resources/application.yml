@@ -1,7 +1,5 @@
 server:
   port: 8861
-  servlet:
-    context-path: /service
 
 spring:
   application:

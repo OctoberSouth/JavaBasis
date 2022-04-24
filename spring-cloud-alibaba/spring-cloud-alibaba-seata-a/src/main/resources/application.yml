@@ -1,0 +1,61 @@
+server:
+  port: 8902
+
+spring:
+  application:
+    # 指定注册到 nacos Server上的应用名称
+    name: seata-a
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  #数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: myPassword
+    # 配置数据源
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#配置seata的注册中心
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  #配置事务分组
+  tx-service-group: my_test_tx_group
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848
+      application: seata-server
+      namespace:
+      username: nacos
+      password: nacos
+      group: SEATA_GROUP
+  #配置seata的配置中心
+  config:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848
+      namespace:
+      username: nacos
+      password: nacos
+      group: SEATA_GROUP
+
+#整合mybatis
+mybatis:
+  type-aliases-package: com.entity
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+#mappers 多个接口时逗号隔开
+mapper:
+  mappers:
+    - com.lp.dao.MyMapper
+  notEmpty: false
+  identity: MYSQL
+
+#pagehelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: false
+  supportMethodsArguments: true
+  params: count=countSql

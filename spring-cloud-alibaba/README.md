@@ -34,3 +34,8 @@ https://github.com/alibaba/Sentinel/wiki/%E4%BB%8B%E7%BB%8D
 启动命令
 java -Dserver.port=8080 -Dcsp.sentinel.dashboard.server=localhost:8080 -Dproject.name=sentinel-dashboard -jar
 sentinel-dashboard.jar
+
+#### seata 分布式事务
+
+参考文章 本项目是基于1.4.2 注意版本
+https://www.cnblogs.com/qiantao/p/15741320.html

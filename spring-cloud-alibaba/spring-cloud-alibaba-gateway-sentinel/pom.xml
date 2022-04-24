@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>spring-cloud-alibaba-gateway-sentinel</artifactId>
     <packaging>jar</packaging>
-    <name>spring-cloud-alibaba-client</name>
+    <name>spring-cloud-alibaba-gateway-sentinel</name>
     <description>网关限流</description>
 
     <parent>
@@ -38,6 +38,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+        <!-- feign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
     </dependencies>
 
