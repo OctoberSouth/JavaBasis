@@ -1,8 +1,9 @@
 package com.lp.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 /**
  * @author 刘攀
@@ -13,15 +14,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class RedisUtil {
 
+    @Resource
     private RedisTemplate redisTemplate;
 
-    /**
-     * 用于属性的方法上
-     */
-    @Autowired
-    public void setRedisTemplate(RedisTemplate redisTemplate) {
-        this.redisTemplate = redisTemplate;
-    }
 
     /**
      * 普通缓存放入

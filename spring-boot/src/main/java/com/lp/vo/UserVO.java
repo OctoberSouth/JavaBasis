@@ -11,7 +11,7 @@ import lombok.Data;
  */
 @ApiModel(value = "用户返回实体类")
 @Data
-public class UserVo {
+public class UserVO {
 
     @ApiModelProperty(value = "用户名")
     private String userName;

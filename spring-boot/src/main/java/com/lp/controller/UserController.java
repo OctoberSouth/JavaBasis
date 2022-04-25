@@ -3,7 +3,7 @@ package com.lp.controller;
 import com.lp.config.RedisUtil;
 import com.lp.service.UserService;
 import com.lp.vo.ResultVO;
-import com.lp.vo.UserVo;
+import com.lp.vo.UserVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -78,7 +78,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/{id}")
-    @ApiOperation(value = "保存所有的评论", response = UserVo.class)
+    @ApiOperation(value = "保存所有的评论", response = UserVO.class)
     public ResultVO selectUserListById(
             @ApiParam(value = "评论id", required = true) @PathVariable String id) {
         ResultVO json = new ResultVO();

@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lp.dao.UserMapper;
 import com.lp.entity.User;
 import com.lp.rabbitmq.RabbitMqConstant;
-import com.lp.vo.UserVo;
+import com.lp.vo.UserVO;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -57,7 +57,7 @@ public class UserService {
      * @param id
      * @return
      */
-    public UserVo selectUserListById(String id) {
+    public UserVO selectUserListById(String id) {
         return userMapper.selectUserById(id);
     }
 

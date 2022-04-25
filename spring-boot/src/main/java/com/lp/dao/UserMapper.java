@@ -3,7 +3,7 @@ package com.lp.dao;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lp.entity.User;
-import com.lp.vo.UserVo;
+import com.lp.vo.UserVO;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
@@ -53,5 +53,5 @@ public interface UserMapper extends BaseMapper<User> {
             "   `user` AS u\n" +
             "WHERE\n" +
             "   u.id = #{id}")
-    UserVo selectUserById(String id);
+    UserVO selectUserById(String id);
 }
