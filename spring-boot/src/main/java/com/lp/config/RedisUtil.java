@@ -1,4 +1,4 @@
-package com.lp.common.config;
+package com.lp.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

@@ -1,4 +1,4 @@
-package com.lp.common.config;
+package com.lp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

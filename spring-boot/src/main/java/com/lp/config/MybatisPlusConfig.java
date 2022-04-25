@@ -1,4 +1,4 @@
-package com.lp.common.config;
+package com.lp.config;
 
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import org.springframework.context.annotation.Bean;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
  * @author 刘攀
  * @version 1.0
  * @time 2019/12/6 11:19
- * @describe  MybatisPlus配置文件
+ * @describe MybatisPlus配置文件
  */
 @Configuration
 public class MybatisPlusConfig {

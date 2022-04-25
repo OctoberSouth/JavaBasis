@@ -1,4 +1,4 @@
-package com.lp.common.config;
+package com.lp.config;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
