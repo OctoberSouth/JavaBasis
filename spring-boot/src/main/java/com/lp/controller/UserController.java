@@ -7,8 +7,9 @@ import com.lp.vo.UserVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
 
 /**
  * @author 刘攀
@@ -21,19 +22,11 @@ import org.springframework.web.bind.annotation.*;
 @Api(tags = {"用户相关"})
 public class UserController {
 
+    @Resource
     private UserService userService;
 
+    @Resource
     private RedisUtil redisUtil;
-
-    @Autowired
-    public void setUserService(UserService userService) {
-        this.userService = userService;
-    }
-
-    @Autowired
-    public void setRedisUtil(RedisUtil redisUtil) {
-        this.redisUtil = redisUtil;
-    }
 
     @GetMapping(value = "/list")
     public ResultVO listUser() {

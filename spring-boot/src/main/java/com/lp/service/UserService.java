@@ -8,10 +8,10 @@ import com.lp.entity.User;
 import com.lp.rabbitmq.RabbitMqConstant;
 import com.lp.vo.UserVo;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -23,20 +23,11 @@ import java.util.List;
 @Service
 public class UserService {
 
+    @Resource
     private UserMapper userMapper;
 
+    @Resource
     private RabbitTemplate rabbitTemplate;
-
-    @Autowired
-    public void setUserMapper(UserMapper userMapper) {
-        this.userMapper = userMapper;
-    }
-
-    @Autowired
-    public void setRabbitTemplate(RabbitTemplate rabbitTemplate) {
-        this.rabbitTemplate = rabbitTemplate;
-    }
-
 
     public List<User> listUser() {
         List<User> userList = this.userMapper.selectList(null);
