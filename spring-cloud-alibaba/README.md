@@ -39,3 +39,9 @@ sentinel-dashboard.jar
 
 参考文章 本项目是基于1.4.2 注意版本
 https://www.cnblogs.com/qiantao/p/15741320.html
+
+#### zipkin 链路最总可视化
+
+官网 https://zipkin.io/
+
+#### sleuth 链路追踪

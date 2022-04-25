@@ -13,9 +13,12 @@
         <module>spring-cloud-alibaba-client</module>
         <!--网关限流-->
         <module>spring-cloud-alibaba-gateway-sentinel</module>
-          <!--seata-->
+        <!--seata-->
         <module>spring-cloud-alibaba-seata-a</module>
         <module>spring-cloud-alibaba-seata-b</module>
+        <!--sleuth-->
+        <module>spring-cloud-alibaba-sleuth-a</module>
+        <module>spring-cloud-alibaba-sleuth-b</module>
     </modules>
 
     <name>spring-cloud-alibaba</name>

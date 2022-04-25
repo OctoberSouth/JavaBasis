@@ -1,0 +1,46 @@
+server:
+  port: 8902
+  shutdown: graceful
+
+spring:
+  application:
+    # 指定注册到 nacos Server上的应用名称
+    name: sleuth-a
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  #数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: myPassword
+    # 配置数据源
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  zipkin:
+    base-url: http://localhost:9411/
+    sender:
+      #同步数据的方式
+      type: web
+  sleuth:
+    sampler:
+      probability: 1 # 采样率 1代表百分之百 就是全部采集，默认是0.1 即百分之十
+
+#整合mybatis
+mybatis:
+  type-aliases-package: com.entity
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+#mappers 多个接口时逗号隔开
+mapper:
+  mappers:
+    - com.lp.dao.MyMapper
+  notEmpty: false
+  identity: MYSQL
+
+#pagehelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: false
+  supportMethodsArguments: true
+  params: count=countSql
