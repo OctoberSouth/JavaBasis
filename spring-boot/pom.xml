@@ -5,11 +5,17 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.lp</groupId>
-    <!-- 用户相关 -->
     <artifactId>spring-boot</artifactId>
-    <packaging>jar</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+
+    <modules>
+        <!--服务生产者-->
+        <module>spring-boot-basis</module>
+    </modules>
+
     <name>spring-boot</name>
-    <description>模块</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,57 +32,25 @@
         <version>2.6.7</version>
     </parent>
 
-
     <dependencies>
-        <!-- 导入Spirng Boot  web 所需的jar包 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <!-- mysql  数据库驱动	-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-        <!-- mybatis-plus -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.5.2</version>
-        </dependency>
-        <!--lomok-->
+        <!--lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
             <scope>provided</scope>
-        </dependency>
-        <!-- swagger3文档 -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-boot-starter</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-        <!-- redis -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <!--rabbitmq-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
     </dependencies>
 
     <!-- 这个插件，可以将应用打包成一个可执行的jar包 -->
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.6.7</version>
-            </plugin>
-        </plugins>
-    </build>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                <version>2.6.7</version>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 </project>
 
