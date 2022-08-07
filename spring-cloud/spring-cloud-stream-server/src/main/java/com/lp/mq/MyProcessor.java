@@ -3,6 +3,7 @@ package com.lp.mq;
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.stereotype.Component;
+
 /**
  * @author 刘攀
  * @version 1.0

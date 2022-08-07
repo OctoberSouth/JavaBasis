@@ -4,87 +4,84 @@ import lombok.Data;
 import lombok.Getter;
 
 /**
- * 
- * 
  * @author 刘攀
- * @time 2019年2月18日下午5:59:28
  * @version 1.0
+ * @time 2019年2月18日下午5:59:28
  * @describe 统一返回JSON数据
  */
 @Data
 public class ResultJson {
 
-	/**
-	 * @Author 刘攀
-	 * @Date 2020/3/25 18:17
-	 * @Version 1.0
-	 * @Description 返回statusCode 统一限定
-	 **/
-	public enum StatusCodeEnum{
-		/**
-		 * 返回statusCode 统一限定
-		 */
-		SUCCESS(200,"正确返回"),
-		FAILURE(412,"参数不正确"),
-		ERROR(500,"程序内部错误");
-		/**
-		 * 标识码
-		 */
-		@Getter
-		private Integer code;
+    /**
+     * 结果
+     */
+    private Integer statusCode = StatusCodeEnum.SUCCESS.getCode();
+    /**
+     * 消息
+     */
+    private String message;
+    /**
+     * 数据
+     */
+    private Object data;
 
-		/**
-		 * 信息
-		 */
-		private String msg;
+    public ResultJson() {
+        super();
+    }
 
-		StatusCodeEnum(Integer code, String msg) {
-			this.code = code;
-			this.msg = msg;
-		}
-	}
-	/**
-	 * 结果
-	 */
-	private Integer statusCode = StatusCodeEnum.SUCCESS.getCode();
+    public ResultJson(StatusCodeEnum statusCodeEnum, String message) {
+        super();
+        this.statusCode = statusCodeEnum.getCode();
+        this.message = message;
+    }
 
-	/**
-	 * 消息
-	 */
-	private String message;
+    public ResultJson(StatusCodeEnum statusCodeEnum, String message, Object data) {
+        super();
+        this.statusCode = statusCodeEnum.getCode();
+        this.message = message;
+        this.data = data;
+    }
 
-	/**
-	 * 数据
-	 */
-	private Object data;
+    public ResultJson(Object data) {
+        super();
+        this.data = data;
+    }
 
-	public ResultJson() {
-		super();
-	}
+    public static ResultJson success(Object data) {
+        return new ResultJson(data);
+    }
 
-	public ResultJson(StatusCodeEnum statusCodeEnum, String message) {
-		super();
-		this.statusCode = statusCodeEnum.getCode();
-		this.message = message;
-	}
+    public static ResultJson error(String message) {
+        return new ResultJson(StatusCodeEnum.ERROR, message);
+    }
 
-	public ResultJson(StatusCodeEnum statusCodeEnum, String message, Object data) {
-		super();
-		this.statusCode = statusCodeEnum.getCode();
-		this.message = message;
-		this.data = data;
-	}
+    /**
+     * @Author 刘攀
+     * @Date 2020/3/25 18:17
+     * @Version 1.0
+     * @Description 返回statusCode 统一限定
+     **/
+    public enum StatusCodeEnum {
+        /**
+         * 返回statusCode 统一限定
+         */
+        SUCCESS(200, "正确返回"),
+        FAILURE(412, "参数不正确"),
+        ERROR(500, "程序内部错误");
+        /**
+         * 标识码
+         */
+        @Getter
+        private Integer code;
 
-	public ResultJson(Object data) {
-		super();
-		this.data = data;
-	}
+        /**
+         * 信息
+         */
+        private String msg;
 
-	public static ResultJson  success(Object data) {
-		return new ResultJson(data);
-	}
-
-	public static ResultJson  error(String message) {
-		return new ResultJson(StatusCodeEnum.ERROR,message);
-	}
+        StatusCodeEnum(Integer code, String msg) {
+            this.code = code;
+            this.msg = msg;
+        }
+    }
 }

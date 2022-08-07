@@ -11,14 +11,14 @@ import lombok.Data;
  */
 @Data
 @TableName("user")
-public class User extends  BaseEntity {
+public class User extends BaseEntity {
 
     /**
-     *用戶名
+     * 用戶名
      */
     private String userName;
     /**
-     *密码
+     * 密码
      */
-    private  String password;
+    private String password;
 }

@@ -21,7 +21,7 @@ public class TestController {
 
     @PostMapping
     public ResultJson saveTest() {
-        System.out.println(defaultZone+"==================");
+        System.out.println(defaultZone + "==================");
         return ResultJson.success(defaultZone);
     }
 }

@@ -23,7 +23,7 @@ public class NicknameService {
 
     @Resource
     private SleuthFeign sleuthFeign;
-    
+
     public void add(String nickname) {
         sleuthFeign.add(nickname);
 

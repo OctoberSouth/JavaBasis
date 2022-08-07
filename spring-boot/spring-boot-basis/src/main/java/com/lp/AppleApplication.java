@@ -31,12 +31,12 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
 @EnableOpenApi
 public class AppleApplication implements CommandLineRunner {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AppleApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AppleApplication.class, args);
+    }
 
-	@Override
-	public void run(String... strings) {
-		System.out.println("服务启动完毕.");
-	}
+    @Override
+    public void run(String... strings) {
+        System.out.println("服务启动完毕.");
+    }
 }

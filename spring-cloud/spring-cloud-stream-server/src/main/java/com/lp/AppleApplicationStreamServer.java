@@ -9,10 +9,10 @@ import org.springframework.cloud.stream.annotation.EnableBinding;
 
 /**
  * 消息中间组件
- * 
+ *
  * @author 刘攀
- * @time 2019年11月8日下午2:47:53
  * @version 1.0
+ * @time 2019年11月8日下午2:47:53
  * @describe
  */
 @EnableEurekaClient
@@ -20,12 +20,12 @@ import org.springframework.cloud.stream.annotation.EnableBinding;
 @EnableBinding(value = {MyProcessor.class})
 public class AppleApplicationStreamServer implements CommandLineRunner {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AppleApplicationStreamServer.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AppleApplicationStreamServer.class, args);
+    }
 
-	@Override
-	public void run(String... strings) {
-		System.out.println("消息中间组件生产者启动完毕.");
-	}
+    @Override
+    public void run(String... strings) {
+        System.out.println("消息中间组件生产者启动完毕.");
+    }
 }

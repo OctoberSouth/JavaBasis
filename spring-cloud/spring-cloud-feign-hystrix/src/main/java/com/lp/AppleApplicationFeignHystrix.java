@@ -22,12 +22,12 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 public class AppleApplicationFeignHystrix implements CommandLineRunner {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AppleApplicationFeignHystrix.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AppleApplicationFeignHystrix.class, args);
+    }
 
-	@Override
-	public void run(String... strings) {
-		System.out.println("服务消费者FeignHystrix启动完毕.");
-	}
+    @Override
+    public void run(String... strings) {
+        System.out.println("服务消费者FeignHystrix启动完毕.");
+    }
 }

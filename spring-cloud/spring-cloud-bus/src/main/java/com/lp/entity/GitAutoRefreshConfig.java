@@ -15,6 +15,9 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "data")
 public class GitAutoRefreshConfig {
 
+    private String env;
+    private UserInfo user;
+
     @Data
     public static class UserInfo {
         private String username;
@@ -29,8 +32,4 @@ public class GitAutoRefreshConfig {
                     '}';
         }
     }
-
-    private String env;
-
-    private UserInfo user;
 }
