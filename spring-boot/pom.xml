@@ -13,6 +13,7 @@
     <modules>
         <!--服务生产者-->
         <module>spring-boot-basis</module>
+        <module>spring-boot-mysql</module>
     </modules>
 
     <name>spring-boot</name>
