@@ -3,17 +3,12 @@ package com.lp;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
 /**
  * springboot 启动
  */
 @SpringBootApplication
-/**
- * 事务
- */
-@EnableTransactionManagement
 /**
  * 启动
  * @author 刘攀
