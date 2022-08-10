@@ -19,8 +19,6 @@ public class ElasticSearchConfig {
 
     @Value("${spring.elasticsearch.rest.host}")
     private String host;
-    @Value("${spring.elasticsearch.rest.enable:true}")
-    private boolean enable;
 
     @Value("${spring.elasticsearch.rest.port}")
     private int port;
@@ -30,26 +28,18 @@ public class ElasticSearchConfig {
     @Value("${spring.elasticsearch.password}")
     private String passWord;
 
-
-    //注入IOC容器
     @Bean
-    public ElasticsearchClient elasticsearchClient(){
-        ElasticsearchClient client = new ElasticsearchClient(null);
-        if (enable){
-            final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
-            //设置账号密码
-            credentialsProvider.setCredentials(
-                    AuthScope.ANY, new UsernamePasswordCredentials(userName, passWord));
-
-//        RestClients restClients =
-            RestClient restClient = RestClient.builder(new HttpHost(host, port))
-                    .setHttpClientConfigCallback(httpClientBuilder->httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider)).build();
-
-            ElasticsearchTransport transport = new RestClientTransport(restClient,new JacksonJsonpMapper());
-            // And create the API client
-            client = new ElasticsearchClient(transport);
-        }
-        return client;
-
+    public ElasticsearchClient elasticsearchClient() {
+        //取消HTTPS限制
+        //xpack.security.enabled: false
+        final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+        //设置账号密码
+        credentialsProvider.setCredentials(
+                AuthScope.ANY, new UsernamePasswordCredentials(userName, passWord));
+        RestClient client = RestClient.builder(new HttpHost(host, port))
+                .setHttpClientConfigCallback(httpClientBuilder -> httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider))
+                .build();
+        ElasticsearchTransport transport = new RestClientTransport(client, new JacksonJsonpMapper());
+        return new ElasticsearchClient(transport);
     }
 }
