@@ -14,10 +14,10 @@ import java.io.IOException;
 public class GpsController {
 
     @Resource
-    EsGpsIndexService esGpsIndexService;
+    private EsGpsIndexService esGpsIndexService;
 
     @Resource
-    EsGpsDocumentService esGpsDocumentService;
+    private EsGpsDocumentService esGpsDocumentService;
 
     @GetMapping("/test")
     public String test() throws IOException {
