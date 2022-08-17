@@ -1,5 +1,6 @@
 package com.lp.controller;
 
+import com.lp.dto.GpsInfo;
 import com.lp.service.EsGpsDocumentService;
 import com.lp.service.EsGpsIndexService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/gps")
@@ -30,21 +33,20 @@ public class GpsController {
         esGpsIndexService.query();
 
         //
-        /*GpsInfo gps = new GpsInfo();
-        gps.setId("1");
-        gps.setDeviceId("1111");
-        gps.setVehicleId("123");
-        gps.setLocation("12,33");
-        gps.setCreateTime(System.currentTimeMillis());
-        gps.setGpsTime(System.currentTimeMillis());
-        esGpsDocumentService.add(gps);*/
+//        GpsInfo gps = new GpsInfo();
+//        gps.setId("1");
+//        gps.setDeviceId("1111");
+//        gps.setVehicleId("123");
+//        gps.setLocation("12,33");
+//        gps.setCreateTime(System.currentTimeMillis());
+//        gps.setGpsTime(System.currentTimeMillis());
+//        esGpsDocumentService.add(gps);
 
-        /*List<GpsInfo> gpsList =  new ArrayList<>();
+        List<GpsInfo> gpsList =  new ArrayList<>();
         int i= 0;
-        GpsInfo gps = null;
         long time = 1656041715000L;
         while (i < 10000){
-            gps = new GpsInfo();
+            GpsInfo   gps = new GpsInfo();
             gps.setId(String.valueOf(i*10000));
             gps.setDeviceId("1111");
             gps.setVehicleId("123456");
@@ -52,11 +54,10 @@ public class GpsController {
             gps.setCreateTime(time);
             gps.setGpsTime(time);
             gpsList.add(gps);
-            //
             time += 1000;
             i += 1;
         }
-        esGpsDocumentService.bulk(gpsList);*/
+        esGpsDocumentService.bulk(gpsList);
 
 
         long start = 1656041715000L;
