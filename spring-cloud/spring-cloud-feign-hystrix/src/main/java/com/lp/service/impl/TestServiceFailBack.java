@@ -21,13 +21,10 @@ public class TestServiceFailBack implements FallbackFactory<TestService> {
 
     @Override
     public TestService create(Throwable cause) {
-        return new TestService() {
-            @Override
-            public ResultJson saveTest(String txt) {
-                //这里是打印错误日志
-                System.err.println(cause);
-                return resultJson;
-            }
+        return txt -> {
+            //这里是打印错误日志
+            System.err.println(cause);
+            return resultJson;
         };
     }
 }
